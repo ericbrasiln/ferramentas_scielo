@@ -10,7 +10,7 @@ Esses scripts tem como objetivos analisar, selecionar, organizar e salvar inform
 
 O `run.py` acessa o diretório contendo as pastas de cada revista e analisa cada XML, inserindo os dados em um arquivo CSV salvo com o nome `metadata_{revista}.csv`. 
 
-:warning: _É preciso definir o caminho do diretório com o dataset. E a estrutura desse dataset deve conter diretórios de cada revista com seus arquivos XML a serem analisados._
+:warning: _É preciso definir o caminho do diretório com o dataset. E a estrutura desse dataset deve conter diretórios de cada revista (ou edições) com seus arquivos XML a serem analisados._
 
 ---
 
