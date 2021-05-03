@@ -6,7 +6,7 @@ import glob
 def df_final(datasetCSV):
     # Função para unir todos os arquivos CSV e gerar CSV final
     os.chdir(datasetCSV) # Acessa o diretório onde os arquivos CSV foram salvos
-    data = time.strftime("%Y-%m-%d_%Hh%Mm%Ss") # Define o dia e a hora
+    data = time.strftime("%Y-%m-%d_%H%-M%-S") # Define o dia e a hora
     csvs = [] # Lista de arquivos CSV exixtentes
     for f in glob.glob("*.csv"): # Iteração no diretório buscando arquivos que terminem com '.csv'
        csvs.append(pd.read_csv(f)) # Inclusão do CSV na lista

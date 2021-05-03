@@ -24,7 +24,8 @@ def dadosRevista(revista): #função para acessar os dados de cada revista
 
     else: #se a pasta da revista já existir, o script vai baixar apenas os dados dos artigos para inserir no CSV
         print(nomeRevista)
-        print('-=- Pasta exixtente. -=-\n')
+        print('-=- Pasta exixtente. -=-\n'
+              '-=- Coletando dados para o CSV. -=-\n')
         link = revista.findNext('a')['href']
         linkIssues = link.replace('serial', 'issues')
         req1 = urlopen(linkIssues)
