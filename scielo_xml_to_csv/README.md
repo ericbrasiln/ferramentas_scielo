@@ -1,10 +1,12 @@
+<p align="center"><img src="img/labhd.png" height="256" width="256"/></p>
+
 # scielo_xml_to_csv
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 **Scripts para converter Dataset de XML  das revistas do _Scielo_ (previamente baixado) para CSV.**
   
-Esses scripts tem como objetivos analisar, selecionar, organizar e salvar informações de um dataset de arquivos XML de todas as revistas previamente baixados a partir do código [`FERRAMENTAS_SCIELO`](FERRAMENTAS_SCIELO/) em um arquivo CSV.
+Esses scripts tem como objetivos analisar, selecionar, organizar e salvar informações de um dataset de arquivos XML de todas as revistas previamente baixados a partir do código [`ferramentas_scielo`](FERRAMENTAS_SCIELO/) em um arquivo CSV.
 
 ---
 
@@ -38,7 +40,7 @@ As seguintes informações são inseridas no CSV:
 
 ---
 
-Em seguida, com a função `df_final()`, todos os arquivos CSV são unidos em um único dataframe com `Pandas` e salvos em um CSV chamado `metadata_scielo_{yyyy-mm-dd_HhMmSs}.csv`.
+Em seguida, com a função `df_final()`, todos os arquivos CSV são unidos em um único dataframe com `Pandas` e salvos em um CSV chamado `metadata_scielo_{yyyy-mm-dd_H-M-S}.csv`.
 
 ---
 
@@ -49,4 +51,4 @@ Elementos presentes nesse repositório foram retirados de [Scielo_Journal_Metada
 
 MIT licence
 
-2020 Eric Brasil, Leonardo Nascimento e Gabriel Andrade
+2020 Eric Brasil (IHL/UNILAB, LABHDUFBA), Leonardo Nascimento (UFBA, LABHDUFBA) e Gabriel Andrade (UFBA, LABHDUFBA).
