@@ -53,13 +53,15 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
 
 2. Realizar o download dos arquivos XML de cada revista do assunto selecionado.
     
-    :warning: Os arquivos XML possuem todos os metadados dos artigos, incluíndo as referências bibliográficas) e usando a ferramenta `XML_to_CSV` será possível convertar todos os XML para uma planilha.
+    :warning: Os arquivos XML possuem todos os metadados dos artigos, incluíndo as referências bibliográficas). Após o download dos arquivos XML é posssível utilizar a ferramenta `scielo_xml_to_csv` para convertar todos os XML para uma planilha.
+
+    Acesse a pasta `scielo_xml_to_csv` e execute o arquivo `run.py`.
 
 ## run_scielo_ISSN.py
 
 Nesse script é possível raspar uma revista específica através do ISSN.
 
-Possui as mesmas características do `run_scielo_scraper.py`, porém a definição da revista a ser raspada é feita do ISSN, uma revista de cada vez.
+Possui as mesmas características do `run_scielo_scraper.py`, porém a definição da revista a ser raspada é feita do ISSN, uma revista de cada vez. Para mais informações leia o [README.md](scielo_xml_to_csv/README.md) da ferramenta.
 
 ## :warning: Atenção
 
