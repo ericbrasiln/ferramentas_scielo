@@ -9,13 +9,13 @@ from csv_final import *
 from refs import *
 
 # Definir o caminho para o diretório com as pastas da revistas
-print('Scripts para converter Dataset de XML  das revistas do Scielo.br (previamente baixado) para CSV.\nPara maiores informações ver https://github.com/ericbrasiln/scielo_xml_to_csv/blob/main/README.md \nDesenvolvido por Eric Brasil, Leonardo Nascimento e Gabriel Andrade.\n')
+print('Scripts para converter Dataset de XML  das revistas do Scielo.br (previamente baixado) para CSV.\nPara maiores informações ver https://github.com/LABHDUFBA/ferramentas_scielo/ \nDesenvolvido por Eric Brasil, Leonardo Nascimento e Gabriel Andrade.\n')
 print('-='*50)
 print('\nLembrando que o diretório do dataset precisa conter pastas das revistas do Scielo, cada pasta contento os artigos em arquivo XML.')
 print('-='*50)
 datasetXML = str(input('\nInsira o caminho do diretório onde se encontra o dataset: '))
 # Criar diretório para salvar os arquivos CSV
-datasetCSV = os.path.join('scielo', 'CSVs')
+datasetCSV = os.path.join('scielo', 'xml', 'CSVs2')
 if not os.path.exists(datasetCSV): # Se não existir, será criada.
     os.makedirs(datasetCSV)
 # Abrir o diretório e iterar em cada revista
@@ -84,7 +84,7 @@ with os.scandir(datasetXML) as pastas:
             df = pd.DataFrame.from_dict(data, orient='index')
             df = df.transpose()
             # Salvar o CSV
-            csv_file = f"metadata_{revista}.csv" #definir nome do csv
+            csv_file = os.path.join(datasetCSV, f"metadata_{revista}.csv" ) #definir nome do csv
             df.to_csv(csv_file)
         # Se o CSV já exitir na pasta, o programa retorna mensagem e passa para o
         # próximo diretório

@@ -1,3 +1,5 @@
+<p align="center"><img src="img/labhd.png" height="256" width="256"/></p>
+
 # ferramentas_scielo
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
@@ -53,13 +55,17 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
 
 2. Realizar o download dos arquivos XML de cada revista do assunto selecionado.
     
-    :warning: Os arquivos XML possuem todos os metadados dos artigos, incluíndo as referências bibliográficas) e usando a ferramenta `XML_to_CSV` será possível convertar todos os XML para uma planilha.
+    :warning: Os arquivos XML possuem todos os metadados dos artigos, incluíndo as referências bibliográficas). Após o download dos arquivos XML é posssível utilizar a ferramenta `scielo_xml_to_csv` para convertar todos os XML para uma planilha.
+
+    Acesse a pasta `scielo_xml_to_csv` e execute o arquivo `run.py`.
+
+    Para mais informações leia o [README.md](scielo_xml_to_csv/README.md) da ferramenta.
 
 ## run_scielo_ISSN.py
 
-Nesse script é possível raspar uma revista específica através do ISSN.
+Nesse script é possível raspar uma revista ou uma lista de revistas através do ISSN.
 
-Possui as mesmas características do `run_scielo_scraper.py`, porém a definição da revista a ser raspada é feita do ISSN, uma revista de cada vez.
+Possui as mesmas características do `run_scielo_scraper.py`, porém a definição da(s) revista(s) a ser raspada é feita ISSN. 
 
 ## :warning: Atenção
 
@@ -68,7 +74,10 @@ Ambos os scripts criarão diretórios para armazenar os arquivos e dados.
 - `scielo/pdf/nomeDaRevista` no caso da raspagem de PDFs;
 - `scielo/xml/nomeDaRevista` no caso da raspagem de XMls.
 
-Entretanto, se a pasta com o nome de uma revista já exixtir, o algoritmo entenderá que a raspagem dela já foi efetuada e **passará para a seguinte**.
+Entretanto, se a pasta com o nome de uma revista já exixtir, o algoritmo entenderá que a raspagem dela já foi efetuada e **passará para a revista seguinte seguinte**.
 
-## Licença MIT
-2020 [Eric Brasil](https://github.com/ericbrasiln), [Gabriel Andrade](https://github.com/gabrielsandrade), [Leonardo Nascimento](https://github.com/leofn)
+## Licença 
+
+[MIT Licence](LICENSE)
+
+2020 [Eric Brasil (IHL/UNILAB, LABHDUFBA)](https://github.com/ericbrasiln), [Gabriel Andrade (UFBA, LABHDUFBA)](https://github.com/gabrielsandrade), [Leonardo Nascimento (UFBA, LABHDUFBA)](https://github.com/leofn)

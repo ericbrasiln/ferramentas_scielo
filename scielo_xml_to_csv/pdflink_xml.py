@@ -22,5 +22,5 @@ def find_pdf_link(entry, linkPDF):
             else:
                 pass
     except Exception as e: # Se o XML apresentar algum erro em sua estrutura o pdf receberá "Erro no XML"
-        pdf = "Erro no XML"
+        pdf = f"Erro no XML: {e}"
         linkPDF.append(pdf) 
