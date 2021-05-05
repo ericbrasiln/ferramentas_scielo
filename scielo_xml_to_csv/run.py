@@ -15,7 +15,7 @@ print('\nLembrando que o diretório do dataset precisa conter pastas das revista
 print('-='*50)
 datasetXML = str(input('\nInsira o caminho do diretório onde se encontra o dataset: '))
 # Criar diretório para salvar os arquivos CSV
-datasetCSV = os.path.join('scielo', 'CSVs')
+datasetCSV = os.path.join('scielo', 'xml', 'CSVs')
 if not os.path.exists(datasetCSV): # Se não existir, será criada.
     os.makedirs(datasetCSV)
 # Abrir o diretório e iterar em cada revista

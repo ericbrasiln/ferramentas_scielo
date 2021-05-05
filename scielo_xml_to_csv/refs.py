@@ -3,10 +3,10 @@ import os
 import re
 
 def referenciasXml(entry, refs):
-    tree = ET.parse(entry) # Analisa o arquivo XML
-    root = tree.getroot()
-    articleRefs = root.find('back')
     try:
+        tree = ET.parse(entry) # Analisa o arquivo XML
+        root = tree.getroot()
+        articleRefs = root.find('back')
         refList = articleRefs.find('ref-list')
         refsCitations = refList.findall('ref/nlm-citation')
         listaRefFinal = []

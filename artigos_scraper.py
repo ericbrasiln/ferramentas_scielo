@@ -1,5 +1,4 @@
-from urllib.request import urlopen, HTTPError, urlretrieve
-from urllib.error import URLError
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
@@ -10,9 +9,13 @@ import wget
 timestr = time.strftime("%Y%m%d")
 listaFinal = []
 
-def rasparArtigo(itemFinal, pasta, nomeRevista, linkIssues): #função para baixar PDF e dados do artigo
+def rasparArtigo(itemFinal, pasta, nomeRevista, linkIssues): 
+    '''
+    função para baixar PDF e dados do artigo
+    '''
     item = itemFinal.find_all('td')
     timestr = time.strftime("%Y-%m-%d")
+    # Acessa e itera em cada edição da revista
     for issue in item:
         try:
             linkissue = issue.find('a')['href']
@@ -31,6 +34,7 @@ def rasparArtigo(itemFinal, pasta, nomeRevista, linkIssues): #função para baix
                 ISSN2 = ''
             tabelaGeral = bs.find(class_='content')
             pdfArtigos = tabelaGeral.find_all('a',href=re.compile(r'/pdf/[a-z]*/'))
+            # Itera na lista de PDF de cada edição
             for artigo in pdfArtigos:
                 link = artigo['href']
                 idArtigo = link.replace('/pdf/', '')
@@ -41,8 +45,8 @@ def rasparArtigo(itemFinal, pasta, nomeRevista, linkIssues): #função para baix
                 listaFinal.append(listaInterna)
                 df = pd.DataFrame(listaFinal, columns=['Nome da Revista', 'ISSN - impresso', 'ISSN - digital', 'Link', 'ID do artigo'])
                 df.to_csv(f'{pasta}/infos_{timestr}.csv')
+                # Tenta realizar o download do PDF, se não for possível imprime o erro
                 try:
-                    #urlretrieve(linkFinal, path)
                     wget.download(linkFinal, path)
                 except Exception as e:
                     print (f'Erro ao baixar: {e}\n')
@@ -51,7 +55,10 @@ def rasparArtigo(itemFinal, pasta, nomeRevista, linkIssues): #função para baix
         except:
             pass
 
-def dadosArtigo(itemFinal, pasta, nomeRevista, linkIssues): # função para baixar apenas os dados do artigo
+def dadosArtigo(itemFinal, pasta, nomeRevista, linkIssues):
+    '''
+    função para baixar apenas os dados do artigo
+    '''
     item = itemFinal.find_all('td')  
     timestr = time.strftime("%Y-%m-%d")  
     for issue in item:

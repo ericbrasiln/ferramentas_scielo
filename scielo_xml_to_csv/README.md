@@ -49,6 +49,6 @@ Elementos presentes nesse repositório foram retirados de [Scielo_Journal_Metada
 ---
 ## Licença
 
-MIT licence
+[MIT Licence](../LICENSE)
 
 2020 Eric Brasil (IHL/UNILAB, LABHDUFBA), Leonardo Nascimento (UFBA, LABHDUFBA) e Gabriel Andrade (UFBA, LABHDUFBA).
